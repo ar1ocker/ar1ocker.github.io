@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AR1OCKER - Squad</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <style>
+      :root {
+        --terminal-green: #00ff00;
+        --terminal-cyan: #00ffff;
+        --terminal-yellow: #ffff00;
+        --terminal-red: #ff5555;
+        --terminal-purple: #aa00ff;
+      }
+
+      body {
+        background-color: #0a0a0a;
+        color: #e0e0e0;
+        font-family: "Courier New", monospace;
+        padding-top: 20px;
+        padding-bottom: 50px;
+        line-height: 1.6;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      .terminal-header {
+        border-bottom: 2px solid var(--terminal-green);
+        padding-bottom: 15px;
+        margin-bottom: 30px;
+        color: var(--terminal-green);
+      }
+
+      .blink {
+        animation: blink 2s infinite;
+      }
+
+      @keyframes blink {
+        0%,
+        100% {
+          opacity: 1;
+        }
+
+        50% {
+          opacity: 0;
+        }
+      }
+
+      .typewriter {
+        overflow: hidden;
+        white-space: nowrap;
+        animation: typing 3.5s steps(40, end);
+      }
+
+      @keyframes typing {
+        from {
+          width: 0;
+        }
+
+        to {
+          width: 100%;
+        }
+      }
+
+      .project-item {
+        background: rgba(20, 20, 20, 0.9);
+        border-left: 4px solid var(--terminal-green);
+        margin-bottom: 15px;
+        padding: 20px;
+        transition: all 0.3s ease;
+      }
+
+      .project-item:hover {
+        background: rgba(30, 30, 30, 0.95);
+        border-left-color: var(--terminal-cyan);
+        transform: translateX(5px);
+      }
+
+      .project-icon {
+        font-size: 1.8rem;
+      }
+
+      .project-title {
+        color: var(--terminal-cyan);
+        font-weight: bold;
+        text-decoration: none;
+        font-size: 1.2rem;
+      }
+
+      .project-title:hover {
+        color: var(--terminal-green);
+      }
+
+      .project-description {
+        margin: 10px 0;
+        color: #e0e0e0;
+      }
+
+      .project-tech {
+        color: var(--terminal-yellow);
+        font-size: 0.9rem;
+        margin-top: 10px;
+      }
+
+      .footer {
+        margin-top: 50px;
+        padding-top: 20px;
+        border-top: 1px solid #333;
+        text-align: center;
+        color: #777;
+        font-size: 0.9rem;
+      }
+
+      .status-bar {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: rgba(10, 10, 10, 0.95);
+        border-top: 1px solid #333;
+        padding: 8px 20px;
+        font-size: 0.9rem;
+        z-index: 1000;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .cursor {
+        color: var(--terminal-green);
+        font-weight: bold;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="terminal-header">
+        <h1>
+          <i class="fas fa-terminal"></i> AR1OCKER <span class="blink">_</span>
+        </h1>
+        <p class="typewriter">Плагины и сервисы для Squad и не только ...</p>
+      </div>
+      <div id="projects-list">
+        <div class="project-item">
+          <a
+            href="https://github.com/ar1ocker/Squad-Admin-Configurator"
+            target="_blank"
+          >
+            <span class="project-icon">💼</span>
+            <span class="project-title">Squad-Admin-Configurator</span>
+          </a>
+          <p class="project-description">
+            <strong
+              >Сервис управление привилегированными пользователями и ротациями в
+              Squad.</strong
+            >
+          </p>
+          <div class="project-tech">
+            Python, Django 4.2, Django Cron, Nginx, PostgreSQL, Docker Compose
+          </div>
+        </div>
+
+        <div class="project-item">
+          <a
+            href="https://github.com/ar1ocker/Playtime-Service"
+            target="_blank"
+          >
+            <span class="project-icon">⌛️</span>
+            <span class="project-title">Playtime-Service</span>
+          </a>
+          <p class="project-description">
+            <strong
+              >Сервис для получения, хранения и поиска времени игроков в
+              определенной игре</strong
+            >
+          </p>
+          <div class="project-tech">
+            Python, Django 5.1, PostgreSQL, Nginx, Docker Compose
+          </div>
+        </div>
+
+        <div class="project-item">
+          <a
+            href="https://github.com/ar1ocker/SquadJS-Vip-For-Seed"
+            target="_blank"
+          >
+            <span class="project-icon">🕶</span>
+            <span class="project-title">SquadJS-Vip-For-Seed</span>
+          </a>
+          <p class="project-description">
+            <strong
+              >Плагин для SquadJS который выдаёт роль игроку за сид. Роль
+              выдаётся через вебхук в Squad-Admin-Configurator</strong
+            >
+          </p>
+          <div class="project-tech">SquadJS Plugin</div>
+        </div>
+
+        <div class="project-item">
+          <a
+            href="https://github.com/ar1ocker/SquadJS-Show-Balance"
+            target="_blank"
+          >
+            <span class="project-icon">⚖️</span>
+            <span class="project-title">SquadJS-Show-Balance</span>
+          </a>
+          <p class="project-description">
+            <strong
+              >Плагин для SquadJS который показывает баланс сторон по игрокам и
+              по сквадным, за параметр для расчета баланса выбирается время
+              игроков в игре</strong
+            >
+          </p>
+          <div class="project-tech">SquadJS Plugin</div>
+        </div>
+
+        <div class="project-item">
+          <a
+            href="https://github.com/ar1ocker/SquadJS-Fighters-Playtime"
+            target="_blank"
+          >
+            <span class="project-icon">💬</span>
+            <span class="project-title">SquadJS-Fighters-Playtime</span>
+          </a>
+          <p class="project-description">
+            <strong
+              >Плагин который показывает игровое время игроков в различных
+              ситуациях</strong
+            >
+          </p>
+          <div class="project-tech">SquadJS Plugin</div>
+        </div>
+
+        <div class="project-item">
+          <a
+            href="https://github.com/ar1ocker/Squad_Discord_Info"
+            target="_blank"
+          >
+            <span class="project-icon">📢</span>
+            <span class="project-title">Squad-Discord-Info</span>
+          </a>
+          <p class="project-description">
+            <strong
+              >Отображение состояния сервера Squad в статусе бота в
+              Discord.</strong
+            >
+          </p>
+          <div class="project-tech">Golang, DiscordGo</div>
+        </div>
+
+        <div class="project-item">
+          <a
+            href="https://github.com/ar1ocker/Squad-rotation-balancer"
+            target="_blank"
+          >
+            <span class="project-icon">📈</span>
+            <span class="project-title">Squad-rotation-balancer</span>
+          </a>
+          <p class="project-description">
+            <strong
+              >Приложение для балансировки ротаций с учетом предпочтений игроков
+              к определенным картам.</strong
+            >
+          </p>
+          <div class="project-tech">
+            Python, NiceGUI, Matplotlib, Docker Compose, Nginx
+          </div>
+        </div>
+
+        <div class="project-item">
+          <a
+            href="https://github.com/ar1ocker/SquadJS-Playtime-Role-Ban"
+            target="_blank"
+          >
+            <span class="project-icon">🦵</span>
+            <span class="project-title">SquadJS-Playtime-Role-Ban</span>
+          </a>
+          <p class="project-description">
+            <strong
+              >Плагин для SquadJS для блокирования ролей игрокам с малым
+              суммарным временем игры.</strong
+            >
+          </p>
+          <div class="project-tech">SquadJS Plugin</div>
+        </div>
+
+        <div class="project-item">
+          <a
+            href="https://github.com/ar1ocker/SquadJS-Disband-Squad-By-Name"
+            target="_blank"
+          >
+            <span class="project-icon">🦵</span>
+            <span class="project-title">SquadJS-Disband-Squad-By-Name</span>
+          </a>
+          <p class="project-description">
+            <strong>Плагин для расформирования отрядов по их имени</strong>
+          </p>
+          <div class="project-tech">SquadJS Plugin</div>
+        </div>
+
+        <div class="project-item">
+          <a
+            href="https://github.com/ar1ocker/SquadJS-Warn-Player-By-Role"
+            target="_blank"
+          >
+            <span class="project-icon">💬</span>
+            <span class="project-title">SquadJS-Warn-Player-By-Role</span>
+          </a>
+          <p class="project-description">
+            <strong
+              >Плагин для варнов игрока когда он берет определенную роль</strong
+            >
+          </p>
+          <div class="project-tech">SquadJS Plugin</div>
+        </div>
+
+        <div class="project-item">
+          <a
+            href="https://github.com/ar1ocker/SquadJS-Commander-Vote"
+            target="_blank"
+          >
+            <span class="project-icon">🔨</span>
+            <span class="project-title">SquadJS-Commander-Vote</span>
+          </a>
+          <p class="project-description">
+            <strong
+              >Плагин для SquadJS на голосование запускаемое командиром стороны
+              (CMD) для разжалования командира отряда.</strong
+            >
+          </p>
+          <div class="project-tech">SquadJS Plugin</div>
+        </div>
+
+        <div class="project-item">
+          <a
+            href="https://github.com/ar1ocker/SquadJS-Command-Squad-Name-Protection"
+            target="_blank"
+          >
+            <span class="project-icon">🛡️</span>
+            <span class="project-title"
+              >SquadJS-Command-Squad-Name-Protection</span
+            >
+          </a>
+          <p class="project-description">
+            <strong
+              >Плагин для защиты от ручного создания сквада с именем "Command
+              Squad"</strong
+            >
+          </p>
+          <div class="project-tech">SquadJS Plugin</div>
+        </div>
+
+        <div class="project-item">
+          <a
+            href="https://github.com/ar1ocker/SquadJS-Commander-Info"
+            target="_blank"
+          >
+            <span class="project-icon">ℹ️</span>
+            <span class="project-title">SquadJS-Commander-Info</span>
+          </a>
+          <p class="project-description">
+            <strong
+              >Плагин для SquadJS который показывает командиров сторон (CMD)
+              через определенное время после старта карты.</strong
+            >
+          </p>
+          <div class="project-tech">SquadJS Plugin</div>
+        </div>
+
+        <div class="project-item">
+          <a
+            href="https://github.com/ar1ocker/SquadJS-cheater-detection"
+            target="_blank"
+          >
+            <span class="project-icon">🦈</span>
+            <span class="project-title">SquadJS-Cheater-Detection</span>
+          </a>
+          <p class="project-description">
+            <strong
+              >Плагин для SquadJS на выявления читеров спамящих
+              ApplyExplosiveDamage.</strong
+            >
+          </p>
+          <div class="project-tech">SquadJS Plugin</div>
+        </div>
+
+        <div class="project-item">
+          <a
+            href="https://github.com/ar1ocker/Squadjs-skipmap-plugin"
+            target="_blank"
+          >
+            <span class="project-icon">⏩</span>
+            <span class="project-title">Squadjs-Skipmap-Plugin</span>
+          </a>
+          <p class="project-description">
+            <strong
+              >Плагин для SquadJS на голосование за пропуск текущей
+              карты.</strong
+            >
+          </p>
+          <div class="project-tech">SquadJS Plugin</div>
+        </div>
+
+        <div class="project-item">
+          <a
+            href="https://github.com/ar1ocker/SquadJS-Timer-Plugins"
+            target="_blank"
+          >
+            <span class="project-icon">⏱️</span>
+            <span class="project-title">SquadJS-Timer-Plugins</span>
+          </a>
+          <p class="project-description">
+            <strong
+              >Плагины для SquadJS для установки таймеров с
+              напоминаниями</strong
+            >
+          </p>
+          <div class="project-tech">SquadJS Plugin</div>
+        </div>
+
+        <div class="project-item">
+          <a
+            href="https://github.com/ar1ocker/SquadJS-Invite-Plugin"
+            target="_blank"
+          >
+            <span class="project-icon">📨</span>
+            <span class="project-title">SquadJS-Invite-Plugin</span>
+          </a>
+          <p class="project-description">
+            <strong
+              >Плагин для SquadJS для запроса вступления в отряд с отображением
+              времени игры</strong
+            >
+          </p>
+          <div class="project-tech">SquadJS Plugin</div>
+        </div>
+
+        <div class="project-item">
+          <a
+            href="https://github.com/ar1ocker/SquadJS-Join-Lobby"
+            target="_blank"
+          >
+            <span class="project-icon">🔗</span>
+            <span class="project-title">SquadJS-Join-Lobby</span>
+          </a>
+          <p class="project-description">
+            <strong
+              >Плагин для SquadJS с REST API для получения ссылки на подключение
+              игроков к серверу через Steam лобби</strong
+            >
+          </p>
+          <div class="project-tech">SquadJS Plugin, Express</div>
+        </div>
+
+        <div class="project-item">
+          <a
+            href="https://github.com/ar1ocker/Gaming-Billing-Squadjs-Plugins"
+            target="_blank"
+          >
+            <span class="project-icon">💰</span>
+            <span class="project-title">Gaming-Billing-Squadjs-Plugins</span>
+          </a>
+          <p class="project-description">
+            <strong
+              >Набор плагинов для SquadJS для интеграции с сервисом игровой
+              валюты</strong
+            >
+          </p>
+          <div class="project-tech">SquadJS Plugin</div>
+        </div>
+
+        <div class="project-item">
+          <a
+            href="https://github.com/ar1ocker/SquadJS-Active-Nameclaim"
+            target="_blank"
+          >
+            <span class="project-icon">🛡️</span>
+            <span class="project-title">SquadJS-Active-Nameclaim</span>
+          </a>
+          <p class="project-description">
+            <strong
+              >Плагин для SquadJS для защиты техники от отрядов, не назвавших
+              отряд наименованием техники</strong
+            >
+          </p>
+          <div class="project-tech">SquadJS Plugin</div>
+        </div>
+
+        <div class="project-item">
+          <a
+            href="https://github.com/ar1ocker/SquadJS-Teamkill-Penalty"
+            target="_blank"
+          >
+            <span class="project-icon">🚫</span>
+            <span class="project-title">SquadJS-Teamkill-Penalty</span>
+          </a>
+          <p class="project-description">
+            <strong
+              >Плагин для SquadJS, который кикает игрока после получения
+              определенного количества репортов за тимкиллы</strong
+            >
+          </p>
+          <div class="project-tech">SquadJS Plugin</div>
+        </div>
+
+        <div class="project-item">
+          <a
+            href="https://github.com/ar1ocker/SquadJS-Show-Attacker"
+            target="_blank"
+          >
+            <span class="project-icon">🔫</span>
+            <span class="project-title">SquadJS-Show-Attacker</span>
+          </a>
+          <p class="project-description">
+            <strong
+              >Плагин для SquadJS, показывающий вашего убийцу и его игровое
+              время с возможностью ответного сообщения</strong
+            >
+          </p>
+          <div class="project-tech">SquadJS Plugin</div>
+        </div>
+
+        <div class="project-item">
+          <a
+            href="https://github.com/ar1ocker/SquadJS-Express-Server-API"
+            target="_blank"
+          >
+            <span class="project-icon">🔗</span>
+            <span class="project-title">SquadJS-Express-Server-API</span>
+          </a>
+          <p class="project-description">
+            <strong
+              >API для SquadJS для получения различной информации с
+              сервера</strong
+            >
+          </p>
+          <div class="project-tech">SquadJS Plugin</div>
+        </div>
+
+        <div class="project-item">
+          <a
+            href="https://github.com/ar1ocker/Playtime-Service-JS-Lib"
+            target="_blank"
+          >
+            <span class="project-icon">⌛️</span>
+            <span class="project-title">Playtime-Service-JS-Lib</span>
+          </a>
+          <p class="project-description">
+            <strong
+              >Библиотека для получения информации из Playtime-Service</strong
+            >
+          </p>
+          <div class="project-tech">JavaScript, Library</div>
+        </div>
+
+        <div class="project-item">
+          <a
+            href="https://github.com/ar1ocker/Squad-Admin-Configurator-Discord"
+            target="_blank"
+          >
+            <span class="project-icon">🤖</span>
+            <span class="project-title">Squad-Admin-Configurator Discord</span>
+          </a>
+          <p class="project-description">
+            <strong
+              >Discord бот для просмотра и добавления привилегированных
+              пользователей в Squad-Admin-Configurator.</strong
+            >
+          </p>
+          <div class="project-tech">Python, Py-Cord, Docker</div>
+        </div>
+
+        <div class="project-item">
+          <a
+            href="https://github.com/ar1ocker/Steam-Playtime-Searcher"
+            target="_blank"
+          >
+            <span class="project-icon">🔍</span>
+            <span class="project-title">Steam-Playtime-Searcher</span>
+          </a>
+          <p class="project-description">
+            <strong
+              >Библиотека для поиска времени игры в Steam, используемая в
+              SquadJS плагинах, поиск напрямую, без Playtime-Service</strong
+            >
+          </p>
+          <div class="project-tech">JavaScript, Steam API</div>
+        </div>
+
+        <div class="project-item">
+          <a
+            href="https://github.com/ar1ocker/Squad-Mod-Downloader"
+            target="_blank"
+          >
+            <span class="project-icon">⏳</span>
+            <span class="project-title">Squad-Mod-Downloader</span>
+          </a>
+          <p class="project-description">
+            <strong>Скрипт для скачивания модов для сервера из Steam</strong>
+          </p>
+          <div class="project-tech">Python</div>
+        </div>
+
+        <div class="project-item">
+          <a
+            href="https://github.com/ar1ocker/LOST.DIR-recover"
+            target="_blank"
+          >
+            <span class="project-icon">📱</span>
+            <span class="project-title">LOST.DIR-recover</span>
+          </a>
+          <p class="project-description">
+            <strong>Скрипт для восстановления расширений файлов</strong>
+          </p>
+          <div class="project-tech">Python, Fleep</div>
+        </div>
+      </div>
+
+      <div class="footer">
+        <p>
+          <i class="fas fa-code"></i> Все проекты с открытым исходным кодом
+          доступны на GitHub
+        </p>
+      </div>
+    </div>
+
+    <div class="status-bar">
+      <div>
+        <span class="cursor">></span> Всего проектов:
+        <span class="text-success">26</span>
+      </div>
+      <div>
+        <span id="current-time"></span>
+      </div>
+    </div>
+
+    <script>
+      function updateTime() {
+        const now = new Date();
+        const timeString = now.toLocaleTimeString("ru-RU");
+        document.getElementById("current-time").textContent = timeString;
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        updateTime();
+        setInterval(updateTime, 1000);
+
+        const typewriterElements = document.querySelectorAll(".typewriter");
+        typewriterElements.forEach((el) => {
+          const text = el.textContent;
+          el.textContent = "";
+          let i = 0;
+          const timer = setInterval(() => {
+            if (i < text.length) {
+              el.textContent += text.charAt(i);
+              i++;
+            } else {
+              clearInterval(timer);
+            }
+          }, 20);
+        });
+      });
+    </script>
+  </body>
+</html>
